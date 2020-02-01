@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"main.1f19ae8e.js","sourceRoot":"..","sourcesContent":[]}
+{"version":3,"sources":["main.js"],"names":["console","log"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,uBAAZ","file":"main.1f19ae8e.js","sourceRoot":"..\\src","sourcesContent":["console.log('hello this is main.js')"]}
