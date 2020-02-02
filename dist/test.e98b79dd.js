@@ -117,11 +117,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"test.js":[function(require,module,exports) {
+})({"css.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var string = "\n*{box-sizing: border-box;}\n*::before{box-sizing: border-box;}\n*::after{box-sizing: border-box;}\n\nbody{\n    min-height: 100vh;\n}\n.skin{\n    background-color: #FFE500;\n    position: relative;\n    /* height: 100vh; */\n}\n.nose{\n    position: relative;\n    top: 200px;\n    left: 50%;\n    margin-left: -10px;\n}\n@keyframes wave{\n    0%{\n        transform: rotate(0deg );\n    }\n    33%{\n        transform: rotate(1deg );\n    }\n    66%{\n        transform: rotate(-1deg );\n    }\n    100%{\n        transform: rotate(0deg );\n    }\n\n}\n.nose:hover{\n    animation: wave 200ms infinite linear;\n}\n.san{\n    position: absolute;\n    border: 10px solid #000;\n    width: 0;\n    height: 0;\n    border-color:#000 transparent transparent transparent ;\n    position: absolute;\n\n}\n.halfc{\n    position: absolute;\n    width: 20px;\n    height:6px;\n    border: 1px solid #000;\n    top: -16px;\n    left: -10px;\n    border-radius: 10px 10px 0 0;\n    background: #000;\n}\n.eye{\n    border: 2px solid #000;\n    background-color: #2e2e2e;\n    width: 50px;\n    height: 50px;\n    position: absolute;\n    top:170px;\n    left: 50%;\n    margin-left: -25px;\n    border-radius: 50%;\n}\n.eye::before{\n    content: '';\n    display: block;\n    width: 20px;\n    height: 20px;\n    background-color: #fff;\n    border-radius: 50%;\n    position: absolute;\n    left: 7px;\n    top: 2px;\n}\n.eye.left{\n    transform: translateX(-120px);\n}\n.eye.right{\n    transform: translateX(120px);\n}\n.mouth{\n    /* border: 1px solid #000; */\n    width: 200px;\n    height: 300px;\n    position: absolute;\n    left: 50%;\n    margin-left: -100px;\n    top:236px\n}\n.mouth .up .lip{\n    border: 4px solid #000;\n    width: 100px;\n    height: 30px;\n    background-color: #FFE500;\n    border-top-color: transparent;}\n   \n.mouth .up .lip.left{\n    border-radius: 0 0 0 85%;\n    transform:rotate(-20deg);\n    border-right-color: transparent; \n}\n.mouth .up .lip.right{\n    margin-left: 94px;\n    margin-top: -30px;\n    border-radius: 0 0 85% 0;\n    transform: rotate(20deg);\n    border-left-color: transparent; \n}\n.mouth .down{\n    /* border: 1px solid #00f; */\n    height: 190px;\n    position: absolute;\n    top: 11px;\n    width: 100%;\n    overflow: hidden;\n}\n.mouth .down .yuan1{\n    border: 3px solid #000;\n    position:absolute;\n    bottom: 0;\n    left: 50%;\n    margin-left: -68px;\n    width: 136px;\n    height: 420px;\n    border-radius:296px/903px;\n    background-color: #9B000A;\n    z-index: -88;\n    overflow: hidden;\n}\n.mouth .down .yuan1 .tongue{\n    /* border: 2px solid #000; */\n    width: 200px;\n    height: 150px;\n    position: absolute;\n    bottom: -3px;\n    left: 50%;\n    margin-left: -100px;\n    border-radius: 55%;\n    background-color: #FF4760;\n}\n.face{\n    position: absolute;\n    width: 88px;\n    height: 88px;\n    top: 280px;\n    left: 50%;\n    margin-left: -44px;\n    border: 2px solid #333;\n    background-color: red;\n    border-radius: 50%;\n}\n.face.left{\n    transform: translateX(-170px);\n}\n.face.right{\n    transform: translateX(170px);\n}";
+var _default = string;
+exports.default = _default;
+},{}],"test.js":[function(require,module,exports) {
+"use strict";
+
+var _css = _interopRequireDefault(require("./css.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // const string = `你好号和潘金莲的多久发送`
 // let n = 1
 // demo.innerText = string.substr(0, n)
-// let id = setInterval(() => {
+// let setInterval(() => {
 //     console.log(n + `:` + string.substr(0, n))
 //     demo.innerText = string.substr(0, n)
 //     n += 1
@@ -130,25 +146,82 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //         return
 //     }
 // }, 200)
-var string = "\n*{box-sizing: border-box;}\n*::before{box-sizing: border-box;}\n*::after{box-sizing: border-box;}\n\nbody{\n    background-color: #FFE500;\n    min-height: 100vh;\n}\n.skin{\n    position: relative;\n    /* height: 100vh; */\n}\n.nose{\n    position: relative;\n    top: 200px;\n    left: 50%;\n    margin-left: -10px;\n}\n@keyframes wave{\n    0%{\n        transform: rotate(0deg );\n    }\n    33%{\n        transform: rotate(1deg );\n    }\n    66%{\n        transform: rotate(-1deg );\n    }\n    100%{\n        transform: rotate(0deg );\n    }\n\n}\n.nose:hover{\n    animation: wave 200ms infinite linear;\n}\n.san{\n    position: absolute;\n    border: 10px solid #000;\n    width: 0;\n    height: 0;\n    border-color:#000 transparent transparent transparent ;\n    position: absolute;\n\n}\n.halfc{\n    position: absolute;\n    width: 20px;\n    height:6px;\n    border: 1px solid #000;\n    top: -16px;\n    left: -10px;\n    border-radius: 10px 10px 0 0;\n    background: #000;\n}\n.eye{\n    border: 2px solid #000;\n    background-color: #2e2e2e;\n    width: 50px;\n    height: 50px;\n    position: absolute;\n    top:170px;\n    left: 50%;\n    margin-left: -25px;\n    border-radius: 50%;\n}\n.eye::before{\n    content: '';\n    display: block;\n    width: 20px;\n    height: 20px;\n    background-color: #fff;\n    border-radius: 50%;\n    position: absolute;\n    left: 7px;\n    top: 2px;\n}\n.eye.left{\n    transform: translateX(-120px);\n}\n.eye.right{\n    transform: translateX(120px);\n}\n.mouth{\n    /* border: 1px solid #000; */\n    width: 200px;\n    height: 300px;\n    position: absolute;\n    left: 50%;\n    margin-left: -100px;\n    top:236px\n}\n.mouth .up .lip{\n    border: 4px solid #000;\n    width: 100px;\n    height: 30px;\n    background-color: #FFE500;\n    border-top-color: transparent;}\n   \n.mouth .up .lip.left{\n    border-radius: 0 0 0 85%;\n    transform:rotate(-20deg);\n    border-right-color: transparent; \n}\n.mouth .up .lip.right{\n    margin-left: 94px;\n    margin-top: -30px;\n    border-radius: 0 0 85% 0;\n    transform: rotate(20deg);\n    border-left-color: transparent; \n}\n.mouth .down{\n    /* border: 1px solid #00f; */\n    height: 190px;\n    position: absolute;\n    top: 11px;\n    width: 100%;\n    overflow: hidden;\n}\n.mouth .down .yuan1{\n    border: 3px solid #000;\n    position:absolute;\n    bottom: 0;\n    left: 50%;\n    margin-left: -68px;\n    width: 136px;\n    height: 420px;\n    border-radius:296px/903px;\n    background-color: #9B000A;\n    z-index: -88;\n    overflow: hidden;\n}\n.mouth .down .yuan1 .tongue{\n    /* border: 2px solid #000; */\n    width: 200px;\n    height: 150px;\n    position: absolute;\n    bottom: -3px;\n    left: 50%;\n    margin-left: -100px;\n    border-radius: 55%;\n    background-color: #FF4760;\n}\n.face{\n    position: absolute;\n    width: 88px;\n    height: 88px;\n    top: 280px;\n    left: 50%;\n    margin-left: -44px;\n    border: 2px solid #333;\n    background-color: red;\n    border-radius: 50%;\n}\n.face.left{\n    transform: translateX(-170px);\n}\n.face.right{\n    transform: translateX(170px);\n}";
-var n = 1;
-demo.innerText = string.substr(0, n);
-demo2.innerText = string.substr(0, n);
-console.log(demo2.innerHTMl);
-var id = setInterval(function () {
-  demo.innerText = string.substr(0, n); // document.getElementById("demo2").innerHTMl = string.substr(0, n)
+var id;
+var player = {
+  id: undefined,
+  time: 100,
+  n: 1,
+  ui: {
+    demo: document.querySelector('#demo'),
+    demo2: document.querySelector('#demo2')
+  },
+  events: {
+    // '#btnPause': player.pause,  //在申明这个对象的时候就开始用这个对象了
+    // '#btnPlay': player.play,
+    '#btnPause': 'pause',
+    //在申明这个对象的时候就开始用这个对象了
+    '#btnPlay': 'play',
+    '#btnSlow': 'slow',
+    '#btnNormal': 'normal',
+    '#btnFast': 'fast'
+  },
+  init: function init() {
+    player.ui.demo.innerText = _css.default.substr(0, player.n);
+    player.ui.demo2.innerText = _css.default.substr(0, player.n);
+    player.bindEvents();
+    player.play();
+  },
+  //哈希表达式的运用
+  // document.querySelector('#btnPause').onclick = player.pause
+  bindEvents: function bindEvents() {
+    //字符串
+    for (var key in player.events) {
+      var value = player.events[key];
+      document.querySelector(key).onclick = player[value];
+    } //player['pause']
+    //player['play']
+    //player['slow']
 
-  demo2.innerText = string.substr(0, n);
-  n += 1;
+  },
+  run: function run() {
+    player.n += 1;
 
-  if (n > string.length) {
+    if (player.n > _css.default.length) {
+      window.clearInterval(player.id);
+      return;
+    }
+
+    demo.innerText = _css.default.substr(0, player.n); // document.getElementById("demo2").innerHTMl = string.substr(0, n)
+
+    demo2.innerText = _css.default.substr(0, player.n);
+    demo2.scrollTop = 99999;
+  },
+  play: function play() {
+    id = setInterval(player.run, player.time);
+  },
+  pause: function pause() {
     window.clearInterval(id);
-    return;
+    console.log('33');
+    console.log(id);
+  },
+  slow: function slow() {
+    player.pause();
+    player.time = 300;
+    player.play();
+  },
+  normal: function normal() {
+    player.pause();
+    player.time = 100;
+    player.play();
+  },
+  fast: function fast() {
+    player.pause();
+    player.time = 0;
+    player.play();
   }
-
-  demo2.scrollTop = 99999;
-}, 0);
-},{}],"C:/Users/xjlad/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+};
+player.init();
+},{"./css.js":"css.js"}],"C:/Users/xjlad/AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -176,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50770" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53998" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
