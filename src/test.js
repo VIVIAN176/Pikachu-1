@@ -14,7 +14,7 @@
 //     }
 // }, 200)
 
-const string = `<style>
+const string = `
 *{box-sizing: border-box;}
 *::before{box-sizing: border-box;}
 *::after{box-sizing: border-box;}
@@ -174,22 +174,22 @@ body{
 }
 .face.right{
     transform: translateX(170px);
-}
-</style>`
+}`
 
 let n = 1
 demo.innerText = string.substr(0, n)
-document.getElementById("demo2").innerHTML = string.substr(0, n)
+demo2.innerText = string.substr(0, n)
 console.log(demo2.innerHTMl)
 
 let id = setInterval(() => {
     demo.innerText = string.substr(0, n)
-    document.getElementById("demo2").innerHTMl = string.substr(0, n)
+    // document.getElementById("demo2").innerHTMl = string.substr(0, n)
+    demo2.innerText = string.substr(0, n)
     n += 1
 
     if (n > string.length) {
         window.clearInterval(id)
         return
     }
-    demo.scrollTop = demo.scrollHeigt;
+    demo2.scrollTop = 99999;
 }, 0)

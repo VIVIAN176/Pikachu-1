@@ -9,24 +9,44 @@
 </head>
 
 <body>
-    <div id="demo"></div>
+    <style id="demo"></style>
     <div id="demo2">插入样式的代码</div>
-    <style>#demo2 {
-            /* display: none; */
+    <div id="button">
+        <button id="btnPause">暂停</button>
+        <button id="btnPlay">播放</button>
+        <button id="btnSlow">慢速</button>
+        <button id="btnNormal">中速</button>
+        <button id="btnFast">快速</button>
+    </div> id=""
+    <style>#button {
+            position: fixed;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            top: 20px;
+            right: 20px;
         }
 
-        #demo {
+        #button>button {
+            margin-bottom: 10px;
+        }
+
+        #demo1 {
+            display: none;
+
+        }
+
+        #demo2 {
             position: fixed;
             top: 0;
-            left: 0;
+            bottom: 0;
             width: 100%;
             height: 50vh;
-            border: 1px solid #0f0;
-            overflow: scroll;
+            border-bottom: 4px solid #fff;
+            overflow-y: auto;
         }
 
         #html {
-            border: 2px solid #f00;
             position: fixed;
             bottom: 0;
             left: 0;
